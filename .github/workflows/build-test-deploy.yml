@@ -1,4 +1,4 @@
-name: hello-world
+name: task2
 on: push
 jobs:
   hello-world-job:
