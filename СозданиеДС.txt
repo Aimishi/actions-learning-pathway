@@ -2,8 +2,12 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 
-namespace DocumentManipulation
+namespace DFI0010_documentManipulation
 {
     public class WordDocumentEditor
     {
@@ -13,7 +17,7 @@ namespace DocumentManipulation
         /// <param name="sourceFilePath">Path to the source Word template.</param>
         /// <param name="destinationFilePath">Path where the modified document will be saved.</param>
         /// <param name="replacements">Dictionary containing the placeholders and their replacements.</param>
-        public void ReplacePlaceholdersInDocument(string sourceFilePath, string destinationFilePath, Dictionary<string, string> replacements)
+        public void ReplacePlaceholdersInDocument(string sourceFilePath, Dictionary<string, string> replacements)
         {
             // Load the document from the source file
             using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(sourceFilePath, true))
@@ -34,7 +38,21 @@ namespace DocumentManipulation
                 }
 
                 // Save the changes to a new document
-                wordDoc.MainDocumentPart.Document.SaveAs(destinationFilePath);
+                wordDoc.MainDocumentPart.Document.Save();
+            }
+        }
+
+        public bool CopyDocument(string sourceFilePath, string destinationFilePath)
+        {
+            try 
+            {
+                File.Copy(sourceFilePath, destinationFilePath, true);
+
+                return true;
+            }
+            catch(Exception ex) 
+            {
+                return false;
             }
         }
     }
@@ -43,24 +61,49 @@ namespace DocumentManipulation
     {
         static void Main()
         {
-            var editor = new WordDocumentEditor();
-            var placeholders = new Dictionary<string, string>
-            {
-                {"{DS}", "12345"},
-                {"{zakazNum}", "789"},
-                {"{zakazDate}", "01/01/2024"},
-                {"{contractNum}", "456"},
-                {"{contractDate}", "01/02/2024"},
-                {"{ozdCity}", "Moscow"},
-                {"{ozdOwnerFull}", "Ivan Ivanov"},
-                {"{notaryNum}", "N-001"},
-                {"{notaryDate}", "12/12/2023"},
-                {"{KA_FullName}", "OOO 'Roga and Kopyta'"},
-                {"{KA_CEO_full}", "Petr Petrov"}
-            };
+            string sourcePathToTemplate = @"\\10.35.42.60\Blueprism_Temp\syyevdo1\DFI\0010\4.4.14(Создание ДС в Word)\D01_D63256L26LT-3MOD — template.docx";
 
-            editor.ReplacePlaceholdersInDocument("path/to/template.docx", "path/to/destination.docx", placeholders);
-            Console.WriteLine("Document has been successfully modified and saved.");
+            string destinationPath = @"\\10.35.42.60\Blueprism_Temp\syyevdo1\DFI\0010\4.4.14(Создание ДС в Word)\D01_D63256L26LT-3MOD_copy1.docx";
+
+            try
+            {
+                var editor = new WordDocumentEditor();
+
+                bool copyFile = editor.CopyDocument(sourcePathToTemplate, destinationPath);
+
+                if (copyFile)
+                {
+                    var placeholders = new Dictionary<string, string>
+                    {
+                        {"DS", "12345"},
+                        {"zakazNum", "789"},
+                        {"zakazDate", "01/01/2024"},
+                        {"contractNum", "456"},
+                        {"contractDate", "01/02/2024"},
+                        {"ozdCity", "Moscow"},
+                        {"ozdOwnerFull", "Ivan Ivanov"},
+                        {"notaryNum", "N-001"},
+                        {"notaryDate", "12/12/2023"},
+                        {"KA_FullName", "OOO 'Roga and Kopyta'"},
+                        {"KA_CEO_full", "Petr Petrov"}
+                    };
+
+                    editor.ReplacePlaceholdersInDocument(destinationPath, placeholders);
+
+                    Console.WriteLine("Document has been successfully modified and saved.");
+                }
+                else
+                {
+                    throw new Exception();
+                }
+
+            }
+            catch(Exception ex)
+            { 
+                Console.WriteLine(ex.Message);
+            }
+
+            
         }
     }
 }
