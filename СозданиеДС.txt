@@ -1,0 +1,66 @@
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
+using System;
+using System.Collections.Generic;
+
+namespace DocumentManipulation
+{
+    public class WordDocumentEditor
+    {
+        /// <summary>
+        /// Method to replace placeholders in a Word document with actual values.
+        /// </summary>
+        /// <param name="sourceFilePath">Path to the source Word template.</param>
+        /// <param name="destinationFilePath">Path where the modified document will be saved.</param>
+        /// <param name="replacements">Dictionary containing the placeholders and their replacements.</param>
+        public void ReplacePlaceholdersInDocument(string sourceFilePath, string destinationFilePath, Dictionary<string, string> replacements)
+        {
+            // Load the document from the source file
+            using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(sourceFilePath, true))
+            {
+                // Get the body of the document
+                var body = wordDoc.MainDocumentPart.Document.Body;
+
+                // Replace each placeholder with its corresponding value
+                foreach (var replacement in replacements)
+                {
+                    foreach (var text in body.Descendants<Text>()) // Find all text elements
+                    {
+                        if (text.Text.Contains(replacement.Key)) // Check if the text contains the placeholder
+                        {
+                            text.Text = text.Text.Replace(replacement.Key, replacement.Value); // Replace the placeholder
+                        }
+                    }
+                }
+
+                // Save the changes to a new document
+                wordDoc.MainDocumentPart.Document.SaveAs(destinationFilePath);
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            var editor = new WordDocumentEditor();
+            var placeholders = new Dictionary<string, string>
+            {
+                {"{DS}", "12345"},
+                {"{zakazNum}", "789"},
+                {"{zakazDate}", "01/01/2024"},
+                {"{contractNum}", "456"},
+                {"{contractDate}", "01/02/2024"},
+                {"{ozdCity}", "Moscow"},
+                {"{ozdOwnerFull}", "Ivan Ivanov"},
+                {"{notaryNum}", "N-001"},
+                {"{notaryDate}", "12/12/2023"},
+                {"{KA_FullName}", "OOO 'Roga and Kopyta'"},
+                {"{KA_CEO_full}", "Petr Petrov"}
+            };
+
+            editor.ReplacePlaceholdersInDocument("path/to/template.docx", "path/to/destination.docx", placeholders);
+            Console.WriteLine("Document has been successfully modified and saved.");
+        }
+    }
+}
