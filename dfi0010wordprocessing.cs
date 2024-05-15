@@ -63,14 +63,12 @@ namespace DFI0010_documentManipulation
             {
                 var editor = new WordDocumentEditor();
 
-                // Fetch data from OeBS and Excel
+
                 DataTable oeBSData = GetDataFromOeBS();
                 DataSet excelData = GetDataFromExcel(@"path_to_excel_file");
 
-                // Prepare dictionary with consolidated data
                 Dictionary<string, string> placeholders = ConsolidateData(oeBSData, excelData);
 
-                // Copy and edit the document
                 bool copyFile = editor.CopyDocument(sourcePathToTemplate, destinationPath);
 
                 if (copyFile)
