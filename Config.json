@@ -1,0 +1,146 @@
+{
+	"Organisations": [
+		{
+			"7740000076": [
+				{
+					"Link": "https://diadoc.kontur.ru/68cbd1b1-25d9-410f-a994-c6b77e85f793/Counteragents/List",
+					"Name": "Публичное акционерное общество \"Мобильные ТелеСистемы\"",
+					"CodOE": "83"
+				}
+			],
+			"7710016640": [
+				{
+					"Link": "https://diadoc.kontur.ru/f6190be6-2f6e-4591-9df3-3de46dad5901/Counteragents/List",
+					"Name": "Публичное акционерное общество \"Московская Городская Телефонная Сеть\"",
+					"CodOE": "54629"
+				}
+			],
+			"7709356049": [
+				{
+					"Link": "https://diadoc.kontur.ru/cb95cf8f-c2e8-4377-bdd5-17e16a6ff903/Counteragents/List",
+					"Name": "Акционерное Общество \"Русская Телефонная Компания\"",
+					"CodOE": "35329"
+				}
+			],
+			"7707434100": [
+				{
+					"Link": "https://diadoc.kontur.ru/c3545f5b-2e35-46cf-b0b5-c0ed27f757ac/Counteragents/List",
+					"Name": "ООО \"МТС Медиа\"",
+					"CodOE": "120785"
+				}
+			],
+			"9725039570": [
+				{
+					"Link": "https://diadoc.kontur.ru/f2e045dd-12bb-473b-b523-bc088f1df623/Counteragents/List",
+					"Name": "ООО \"ПРИКЛАДНАЯ ТЕХНИКА\"",
+					"CodOE": "135500"
+				}
+			],
+			"9709006506": [
+				{
+					"Link": "https://diadoc.kontur.ru/91c4f996-63d7-4ee8-89df-ca9cfc1c37f9/Counteragents/List",
+					"Name": "ООО \"МТС ЭНЕРГО\"",
+					"CodOE": "97455"
+				}
+			],
+			"9725045598": [
+				{
+					"Link": "https://diadoc.kontur.ru/ed510f8e-f3ab-4b4d-87a2-fe84a3fa682b/Counteragents/List",
+					"Name": "ООО \"ФИНАНСОВЫЕ СИСТЕМЫ И ТЕХНОЛОГИИ\"",
+					"CodOE": "140440"
+				}
+			],
+			"9709073534": [
+				{
+					"Link": "https://diadoc.kontur.ru/d0cce94c-9162-4af2-9461-ffaec256b5b2/Counteragents/List",
+					"Name": "АО \"МВС\"",
+					"CodOE": "151240"
+				}
+			],
+			"9702034494": [
+				{
+					"Link": "https://diadoc.kontur.ru/717108ca-f657-4a8e-be2d-6709baa63776/Counteragents/List",
+					"Name": "ООО \"СТВ МТС\"",
+					"CodOE": "147203"
+				}
+			],
+			"9725021438": [
+				{
+					"Link": "https://diadoc.kontur.ru/23ef580f-fd10-45d1-9161-db3bcca96897/Counteragents/List",
+					"Name": "ООО \"МТС ИИ\"",
+					"CodOE": "120784"
+				}
+			],
+			"9709058198": [
+				{
+					"Link": "https://diadoc.kontur.ru/0f80eae6-7e6a-479d-9787-a69095161f7d/Counteragents/List",
+					"Name": "ООО \"МТС ЭНТЕРТЕЙНМЕНТ\"",
+					"CodOE": "125060"
+				}
+			],
+			"7705998292": [
+				{
+					"Link": "https://diadoc.kontur.ru/9e980ab9-8914-46c2-b4b5-a8e46bbc50d5/Counteragents/List",
+					"Name": "АО \"МГТС - Недвижимость\"",
+					"CodOE": "96276"
+				}
+			],
+			"7713267433": [
+				{
+					"Link": "https://diadoc.kontur.ru/73b52661-e5e1-46e0-bd3c-86b2393269a5/Counteragents/List",
+					"Name": "ООО \"ЦТВ\"",
+					"CodOE": "82535"
+				}
+			],
+			"7708797139": [
+				{
+					"Link": "https://diadoc.kontur.ru/57647e3d-7052-4780-bbf5-a983b22323db/Counteragents/List",
+					"Name": "АО \"ОРБИТА\"",
+					"CodOE": "96275"
+				}
+			],
+			"5027312461": [
+				{
+					"Link": "https://diadoc.kontur.ru/16cde0a9-4f02-4b46-856d-ce4484f84013/Counteragents/List",
+					"Name": "ООО \"БИК\"",
+					"CodOE": "156282"
+				}
+			],
+			"7707751558": [
+				{
+					"Link": "https://diadoc.kontur.ru/b2f51230-2f71-4072-940e-b5adbb2c39c3/Counteragents/List",
+					"Name": "ООО \"Телеком Проекты\"",
+					"CodOE": "85596"
+				}
+			],
+			"9725046231": [
+				{
+					"Link": "https://diadoc.kontur.ru/bd1e9281-ffa3-4d88-ba31-f3e4a28d6f49/Counteragents/List",
+					"Name": "ООО \"ИРТЕЯ\"",
+					"CodOE": "140678"
+				}
+			],
+			"2700005135": [
+				{
+					"Link": "https://diadoc.kontur.ru/4e4e347d-026b-4de8-bdf7-5009b6b67bf6/Counteragents/List",
+					"Name": "ООО \"ЦОД ХАМАЛЬ\"",
+					"CodOE": "173520"
+				}
+			]
+		}
+	],
+	"Limits":  [
+		{
+			"Time": "00.08:00:00",
+			"Elements": 150000,
+			"ForceAdded": true
+		}
+	],
+	"Paths":  [
+		{
+			"ScreenshotsError": "",
+			"SplitWrkbook": "",
+			"MailingListPathCSV": ""
+		}
+	]
+}
