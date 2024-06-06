@@ -11,7 +11,7 @@
             <SerializationItem>
                 <IsListValue>false</IsListValue>
                 <Name>ComponentName</Name>
-                <Value xsi:type="xsd:string">Vars</Value>
+                <Value xsi:type="xsd:string">Последовательность</Value>
             </SerializationItem>
             <SerializationItem>
                 <IsListValue>false</IsListValue>
@@ -37,7 +37,7 @@
             <SerializationItem>
                 <IsListValue>false</IsListValue>
                 <Name>ComponentID</Name>
-                <Value xmlns:q1="http://microsoft.com/wsdl/types/" xsi:type="q1:guid">f3f50c60-d156-476a-bbf9-32843ac4fd0c</Value>
+                <Value xmlns:q1="http://microsoft.com/wsdl/types/" xsi:type="q1:guid">390e07f2-b062-4dec-9f3f-b597cde80b1d</Value>
             </SerializationItem>
             <SerializationItem>
                 <IsListValue>false</IsListValue>
@@ -110,7 +110,7 @@
                     <SerializationItem>
                         <IsListValue>false</IsListValue>
                         <Name>UpdateVars</Name>
-                        <Value xsi:type="xsd:boolean">true</Value>
+                        <Value xsi:type="xsd:boolean">false</Value>
                     </SerializationItem>
                     <SerializationItem>
                         <IsListValue>false</IsListValue>
@@ -127,7 +127,7 @@
                     <SerializationItem>
                         <IsListValue>false</IsListValue>
                         <Name>ComponentID</Name>
-                        <Value xmlns:q2="http://microsoft.com/wsdl/types/" xsi:type="q2:guid">182eb03c-135c-48dc-a9ff-28b0160b5fa1</Value>
+                        <Value xmlns:q2="http://microsoft.com/wsdl/types/" xsi:type="q2:guid">b9032da1-32a7-4b7e-a8cf-efa95512f498</Value>
                     </SerializationItem>
                     <SerializationItem>
                         <IsListValue>false</IsListValue>
@@ -173,13 +173,6 @@
             </SerializationComponent>
         </Components>
     </RootContainer>
-    <GlobalVariables>
-        <ScriptVariable>
-            <Name>tempList</Name>
-            <Group />
-            <DataTypeString>List&lt;String&gt;</DataTypeString>
-            <Direction>IN_OUT</Direction>
-        </ScriptVariable>
-    </GlobalVariables>
+    <GlobalVariables />
     <Arguments />
 </SerializationRoot>
